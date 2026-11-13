@@ -143,7 +143,7 @@ Follow these steps to run the project locally.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/armanGitCourse/social.git
+git clone https://github.com/armanghorbanpour/social.git
 cd social
 ```
 
