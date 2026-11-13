@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Register | Social{% endblock %}
+
+{% block content %}
+
+<!-- فرم ثبت‌نام کاربر جدید -->
+<div class="form-container">
+    <div class="form-card">
+        <h2>Create Account</h2>
+        <p>Join the Social community.</p>
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary w-100">
+                Create Account
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

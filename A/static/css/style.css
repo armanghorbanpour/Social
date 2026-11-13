@@ -1,0 +1,481 @@
+
+/* تنظیمات کلی صفحه */
+:root {
+    --primary: #635bff;
+    --primary-dark: #5148e5;
+    --background: #f5f6fa;
+    --text: #202333;
+    --muted: #777d91;
+    --border: #e8eaf1;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* نوار بالای سایت */
+.site-navbar {
+    background: #202333;
+    padding: 16px 0;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+.brand-dot {
+    color: #827bff;
+}
+
+.site-navbar .nav-link {
+    color: #d8d9e4;
+    margin-left: 15px;
+    transition: 0.2s;
+}
+
+.site-navbar .nav-link:hover {
+    color: white;
+}
+
+/* محدوده اصلی محتوا */
+.main-container {
+    padding-top: 45px;
+    padding-bottom: 70px;
+}
+
+/* بخش معرفی صفحه اصلی */
+.hero-section {
+    background: linear-gradient(120deg, #292b48, #635bff);
+    color: white;
+    border-radius: 20px;
+    padding: 48px;
+    margin-bottom: 30px;
+}
+
+.hero-section h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 800;
+    margin: 12px 0;
+}
+
+.hero-section p {
+    color: #e0dfff;
+    margin-bottom: 0;
+}
+
+.section-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #c4c0ff;
+    font-weight: bold;
+}
+
+/* فرم جست‌وجو */
+.search-section {
+    background: white;
+    padding: 22px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    margin-bottom: 40px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.search-form p {
+    margin: 0;
+    flex: 1;
+    min-width: 180px;
+}
+
+.search-form input {
+    width: 100%;
+}
+
+/* عنوان بخش‌ها */
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 23px;
+    font-weight: 750;
+    margin: 0;
+}
+
+.section-heading span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* کارت پست‌ها */
+.post-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(30, 35, 70, 0.08);
+}
+
+.post-card .card-body {
+    padding: 24px;
+}
+
+.post-card-top {
+    margin-bottom: 18px;
+}
+
+.post-tag {
+    background: #efeeff;
+    color: var(--primary);
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.post-title {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 650;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.post-title:hover {
+    color: var(--primary);
+}
+
+.post-card-footer {
+    background: #fff;
+    border-top: 1px solid var(--border);
+    padding: 15px 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.post-card-footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* حالت خالی برای نبود پست یا کامنت */
+.empty-state {
+    background: white;
+    border: 1px dashed #d7d9e5;
+    border-radius: 16px;
+    padding: 35px;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* دکمه‌های اصلی */
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* کارت جزئیات پست */
+.detail-card {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(30, 35, 70, 0.04);
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar-circle,
+.profile-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efeeff;
+    color: var(--primary);
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.avatar-circle {
+    width: 44px;
+    height: 44px;
+}
+
+.author-name {
+    display: block;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post-author small,
+.comment-header small {
+    color: var(--muted);
+}
+
+.post-content {
+    font-size: 17px;
+    line-height: 2;
+    overflow-wrap: anywhere;
+}
+
+/* بخش نظرات */
+.comments-section {
+    margin-top: 35px;
+}
+
+.comments-section h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.comment-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.comment-card p {
+    overflow-wrap: anywhere;
+}
+
+.reply-form {
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.reply-card {
+    background: #f5f6fa;
+    border-radius: 10px;
+    padding: 14px;
+    margin: 12px 0 0 20px;
+}
+
+.reply-card small {
+    color: var(--muted);
+    margin-left: 8px;
+}
+
+/* فرم‌های ورود، ثبت‌نام و ساخت پست */
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.form-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 8px 25px rgba(30, 35, 70, 0.04);
+}
+
+.form-card h2 {
+    font-weight: 750;
+    margin-bottom: 8px;
+}
+
+.form-card > p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.form-card form p,
+.comment-form p,
+.reply-form p {
+    margin-bottom: 18px;
+}
+
+.form-card label,
+.comment-form label,
+.reply-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+/* ظاهر فیلدهای فرم Django */
+.form-card input,
+.form-card textarea,
+.form-card select,
+.comment-form input,
+.comment-form textarea,
+.comment-form select,
+.reply-form input,
+.reply-form textarea,
+.reply-form select,
+.search-form input {
+    width: 100%;
+    border: 1px solid #dfe1eb;
+    border-radius: 9px;
+    padding: 11px 13px;
+    background: white;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-card input:focus,
+.form-card textarea:focus,
+.form-card select:focus,
+.comment-form input:focus,
+.comment-form textarea:focus,
+.reply-form input:focus,
+.reply-form textarea:focus,
+.search-form input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.12);
+}
+
+/* پروفایل کاربر */
+.profile-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 35px 20px;
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    font-size: 35px;
+    margin: 0 auto 15px;
+}
+
+.profile-card h2 {
+    font-weight: bold;
+}
+
+/* پیام‌های Django */
+.alert {
+    border-radius: 10px;
+}
+
+/* نمایش بهتر در موبایل */
+@media (max-width: 576px) {
+    .main-container {
+        padding-top: 25px;
+    }
+
+    .hero-section {
+        padding: 30px 22px;
+    }
+
+    .form-card {
+        padding: 24px 18px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .post-card-footer {
+        flex-wrap: wrap;
+    }
+}
+
+/* تنظیم هم‌ترازی کادر جست‌وجو و دکمه */
+.search-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+/* حذف فاصله اضافی فرم جست‌وجو */
+.search-form p {
+    flex: 1;
+    min-width: 180px;
+    margin: 0;
+}
+
+/* قرار دادن عنوان بالای کادر ورودی */
+.search-form label {
+    display: block;
+    margin-bottom: 7px;
+}
+
+/* یکسان کردن ارتفاع کادر و دکمه */
+.search-form input {
+    height: 42px;
+}
+
+/* هماهنگی ارتفاع دکمه با کادر */
+.search-form button {
+    height: 42px;
+    white-space: nowrap;
+}
+
+/* ظاهر بخش باز و بسته شدن فرم Reply */
+.reply-details {
+    margin-top: 15px;
+}
+
+/* ظاهر دکمه Reply */
+.reply-details summary {
+    display: inline-block;
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    padding: 7px 12px;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+}
+
+/* حذف فلش پیش‌فرض مرورگر */
+.reply-details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* تغییر ظاهر دکمه هنگام رفتن موس روی آن */
+.reply-details summary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* فاصله فرم از دکمه Reply */
+.reply-details[open] .reply-form {
+    margin-top: 15px;
+}

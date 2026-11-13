@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Edit Post | Social{% endblock %}
+
+{% block content %}
+
+<!-- فرم ویرایش پست -->
+<div class="form-container">
+    <div class="form-card">
+        <h2>Edit your post</h2>
+        <p>Make changes to your content.</p>
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            <!-- نمایش فیلدهای فرم ویرایش -->
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary w-100">
+                Save Changes
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

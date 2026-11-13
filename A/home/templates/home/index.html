@@ -1,0 +1,68 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Home | Social{% endblock %}
+
+{% block content %}
+
+<!-- معرفی صفحه اصلی -->
+<section class="hero-section">
+    <div>
+        <span class="section-label">YOUR SOCIAL SPACE</span>
+        <h1>Share your thoughts.</h1>
+        <p>Discover posts and connect with people.</p>
+    </div>
+</section>
+
+<!-- فرم جست‌وجوی پست‌ها -->
+<section class="search-section">
+    <form action="" method="get" class="search-form">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</section>
+
+<!-- عنوان بخش پست‌ها -->
+<div class="section-heading">
+    <h2>Latest Posts</h2>
+    <span>Explore what's happening</span>
+</div>
+
+<!-- نمایش کارت‌های پست -->
+<div class="row g-4">
+    {% for post in posts %}
+        <div class="col-12 col-md-6 col-lg-4">
+            <article class="card post-card h-100">
+
+                <div class="card-body">
+                    <div class="post-card-top">
+                        <span class="post-tag">POST</span>
+                    </div>
+
+                    <!-- لینک ورود به صفحه جزئیات پست -->
+                    <a href="{{ post.get_absolute_url }}" class="post-title">
+                        {{ post.body|truncatewords:18 }}
+                    </a>
+                </div>
+
+                <div class="card-footer post-card-footer">
+                    <span>By {{ post.user.username }}</span>
+                    <a href="{{ post.get_absolute_url }}">Read more →</a>
+                </div>
+
+            </article>
+        </div>
+    {% empty %}
+
+        <!-- پیام در صورت نبود پست -->
+        <div class="col-12">
+            <div class="empty-state">
+                <h4>No posts found</h4>
+                <p>Be the first one to share something!</p>
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+<!-- نوار ناوبری اصلی سایت -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <!-- نام سایت -->
+        <a class="navbar-brand fw-bold" href="{% url 'home:home' %}">
+            Social<span class="brand-dot">.</span>
+        </a>
+
+        <!-- دکمه نمایش منو در موبایل -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- لینک‌های منو -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <div class="navbar-nav ms-auto align-items-lg-center">
+
+                <a class="nav-link" href="{% url 'home:home' %}">Home</a>
+
+                {% if request.user.is_authenticated %}
+
+                    <a class="nav-link" href="{% url 'account:user_profile' request.user.id %}">
+                        Profile
+                    </a>
+
+                    <!-- خروج از حساب کاربری -->
+                    <a class="nav-link" href="{% url 'account:user_logout' %}">
+                        Logout
+                    </a>
+
+                    <!-- پنل مدیریت فقط برای مدیران نمایش داده می‌شود -->
+                    {% if request.user.is_staff %}
+                        <a class="nav-link" href="{% url 'admin:index' %}">
+                            Admin Panel
+                        </a>
+                    {% endif %}
+
+                {% else %}
+
+                    <a class="nav-link" href="{% url 'account:user_login' %}">
+                        Login
+                    </a>
+
+                    <a class="btn btn-primary btn-sm ms-lg-3 mt-2 mt-lg-0"
+                       href="{% url 'account:user_register' %}">
+                        Get Started
+                    </a>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>

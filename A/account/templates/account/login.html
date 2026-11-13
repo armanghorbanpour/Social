@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Login | Social{% endblock %}
+
+{% block content %}
+
+<!-- فرم ورود کاربر -->
+<div class="form-container">
+    <div class="form-card">
+        <h2>Welcome Back</h2>
+        <p>Login to continue to Social.</p>
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary w-100">
+                Login
+            </button>
+        </form>
+
+        <!-- لینک بازیابی رمز عبور -->
+        <div class="text-center mt-3">
+            <a href="{% url 'account:reset_password' %}">
+                Forgot your password?
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
